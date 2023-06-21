@@ -29,21 +29,21 @@ import {
   TitleFooter,
   Address,
 } from "./styled";
-import React, { FC, useEffect, useState } from "react";
-import { Box, Modal } from "@mui/material";
-import axios from "axios";
+import IMGLocation from "../../../public/icons8-location-50-dark.png";
+import { PRIVATE_DATA } from "../../../otherPages/privateData";
 import ModalServices from "../../ModalServices/ModalServices";
 import IMGFacebook from "../../../public/facebook-footer.svg";
 import IMGLinkedin from "../../../public/linkedin-footer.svg";
 import IMGAlarmClock from "../../../public/alarm-clock.png";
 import IMGPhoneLogo from "../../../public/silver-mobil.png";
 import IMGTwitter from "../../../public/twitter-footer.svg";
+import { Iframe } from "../../../otherPages/career/style";
+import React, { FC, useEffect, useState } from "react";
+import LogoImg from "../../LogoImg/LogoImg";
+import { Box, Modal } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { PRIVATE_DATA } from "../../../otherPages/privateData";
-import LogoImg from "../../LogoImg/LogoImg";
-import IMGLocation from "../../../public/icons8-location-50-dark.png";
-import { Iframe } from "../../../otherPages/career/style";
+import axios from "axios";
 
 const BASE_MENU = [
   { page: "Home", path: "/" },
