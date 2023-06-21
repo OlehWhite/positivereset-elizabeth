@@ -24,7 +24,7 @@ const LogoImgDark = () => {
               fontSize: 18,
             }}
           >
-            ILLINOIS BEHAVIORAL CARE
+            POSITIVE RESET
           </Box>
           <Box
             sx={{
@@ -34,6 +34,15 @@ const LogoImgDark = () => {
             }}
           >
             Metal Health Clinic
+          </Box>
+          <Box
+            sx={{
+              color: "rgba(55,152,213,0.98)",
+              fontWeight: "bold",
+              fontSize: 14,
+            }}
+          >
+            ELIZABETH
           </Box>
         </Box>
       </Box>
