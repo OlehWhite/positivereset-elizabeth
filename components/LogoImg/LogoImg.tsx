@@ -27,7 +27,7 @@ const LogoImg = () => {
               fontSize: 18,
             }}
           >
-            Metal Health Clinic
+            Mental Health Clinic
           </Box>
           <Box
             sx={{
