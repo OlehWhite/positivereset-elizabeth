@@ -21,7 +21,7 @@ const CouplesTherapy = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Couples
+          Positive Reset Elizabeth - Call Today | Couples
           Therapy
         </title>
         <meta
