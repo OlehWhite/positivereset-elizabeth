@@ -26,7 +26,7 @@ const Telehealth = () => {
     <Box>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Telehealth
+          Positive Reset Elizabeth - Call Today | Telehealth
         </title>
         <meta
           name="keywords"
