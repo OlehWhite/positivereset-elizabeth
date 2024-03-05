@@ -25,7 +25,7 @@ const OutpatientMentalHealth = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Outpatient
+          Positive Reset Elizabeth - Call Today | Outpatient
           Mental Health
         </title>
         <meta
