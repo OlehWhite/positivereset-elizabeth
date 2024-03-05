@@ -30,7 +30,7 @@ const Rates = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Rates
+          Positive Reset Elizabeth - Call Today | Rates
         </title>
         <meta
           name="keywords"
