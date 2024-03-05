@@ -26,7 +26,7 @@ const AngerManagement = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Anger
+          Positive Reset Elizabeth - Call Today | Anger
           Management
         </title>
         <meta
