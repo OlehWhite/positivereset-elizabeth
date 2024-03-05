@@ -22,7 +22,7 @@ const MedicationManagement = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Medication
+          Positive Reset Elizabeth - Call Today | Medication
           Management
         </title>
         <meta
