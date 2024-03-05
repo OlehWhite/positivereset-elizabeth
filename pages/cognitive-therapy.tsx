@@ -20,7 +20,7 @@ const CognitiveTherapy = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Cognitive
+          Positive Reset Elizabeth - Call Today | Cognitive
           Therapy
         </title>
         <meta
