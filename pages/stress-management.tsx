@@ -24,7 +24,7 @@ const StressManagement = () => {
     <>
       <Head>
         <title>
-          Illinois Behavioral Care - Call Today | Child and
+          Positive Reset Elizabeth - Call Today | Child and
           Adolescent
         </title>
         <meta
