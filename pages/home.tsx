@@ -13,7 +13,7 @@ const Home: FC = () => {
   return (
     <>
       <Head>
-        <title>Illinois Behavioral Care - Call Today</title>
+        <title>Positive Reset Elizabeth - Call Today</title>
         <meta
           name="description"
           content="New Jersey Mental Health Clinic offers psychotherapy; medication management, comprehensive assessment, diagnosis and treatment of a full range of behavioral disorders."
