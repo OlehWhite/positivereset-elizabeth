@@ -1,46 +1,32 @@
 import React, { FC, useEffect, useState } from "react";
 import IGMIllinois from "../../../../public/Illinois-BC-Name01e.png";
-import { Wrapper, Title, Text, Link, Tel, Email, Address } from "./styled";
+import { Wrapper, Title, Text, Link } from "./styled";
 import { Box } from "@mui/material";
 import axios from "axios";
-import IMGFacebook from "../../../../public/icons8-facebook-50.png";
-import IMGInstagram from "../../../../public/instagram.png";
+
 import Image from "next/image";
 import { PRIVATE_DATA } from "../../../privateData";
+import { LINKS } from "../../../utils";
 
 const ID = "telephoneNumber";
 
 export const Covid19: FC = () => {
-  const [telNum, setTelNum] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
   const [linkFacebook, setLinkFaceBook] = useState<string>("");
   const [linkInstagram, setLinkInstagram] = useState<string>("");
-  const [address, setAddress] = useState<string>("");
 
   useEffect(() => {
     axios
       .get(
-        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
+        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`,
       )
       .then((response) => {
-        setTelNum(
-          response.data.items[0].fields.positiveresetTelephoneNumber.content[0]
-            .content[0].value
-        );
-        setEmail(
-          response.data.items[0].fields.positiveresetEmail.content[0].content[0]
-            .value
-        );
         setLinkFaceBook(
-          response.data.items[0].fields.facebookLink.content[0].content[0].value
+          response.data.items[0].fields.facebookLink.content[0].content[0]
+            .value,
         );
         setLinkInstagram(
           response.data.items[0].fields.instagramLink.content[0].content[0]
-            .value
-        );
-        setAddress(
-          response.data.items[0].fields.positiveresetAddress.content[0]
-            .content[0].value
+            .value,
         );
       })
       .catch((error) => {
@@ -93,13 +79,10 @@ export const Covid19: FC = () => {
             services please reach out to our office at +1 (848) 228-3388 and get
             access to the help you need.
           </Text>
-          <Tel>{telNum}</Tel>
-          <Email>{email}</Email>
-          <Address>{address}</Address>
           <Box sx={{ display: "flex" }}>
             <Link href={linkFacebook} target="_blank">
               <Image
-                src={IMGFacebook}
+                src={LINKS.facebook}
                 alt="Facebook"
                 title="Facebook"
                 width={22}
@@ -108,7 +91,7 @@ export const Covid19: FC = () => {
             </Link>
             <Link href={linkInstagram} target="_blank">
               <Image
-                src={IMGInstagram}
+                src={LINKS.instagram}
                 alt="Linkedin"
                 title="Linkedin"
                 width={22}
