@@ -41,8 +41,8 @@ import { Iframe } from "../../../otherPages/career/style";
 import React, { FC, useEffect, useState } from "react";
 import LogoImg from "../../LogoImg/LogoImg";
 import { Box, Modal } from "@mui/material";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import axios from "axios";
 import { LINKS, OTHER_INFO, SCHEDULE } from "../../../otherPages/utils";
 
