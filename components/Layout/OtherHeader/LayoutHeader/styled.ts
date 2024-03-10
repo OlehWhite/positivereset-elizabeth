@@ -20,7 +20,7 @@ export const ContactInfo = styled(Box)(() => {
   return {};
 });
 
-export const Tel = styled(Box)(() => {
+export const Tel = styled("a")(() => {
   return {
     marginBottom: 6,
     color: "#979797",

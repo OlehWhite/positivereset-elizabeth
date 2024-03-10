@@ -123,7 +123,7 @@ export const Footer: FC = () => {
               />
             </WrapperImg>
             <ContactInfo sx={{ width: 210 }}>
-              <Tel>{OTHER_INFO.tel}</Tel>
+              <Tel href={`tel:${OTHER_INFO.tel}`}>{OTHER_INFO.tel}</Tel>
               <Link id="link-email-dark" href={OTHER_INFO.email_link}>
                 {OTHER_INFO.email}
               </Link>
