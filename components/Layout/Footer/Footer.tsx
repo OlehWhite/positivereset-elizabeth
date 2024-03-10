@@ -187,7 +187,7 @@ export const Footer: FC = () => {
           <Days>
             <Day>Sunday: Close</Day>
             <Day>Monday: 9am - 8pm</Day>
-            <Day>Thusday: 9am - 8pm</Day>
+            <Day>Tuesday: 9am - 8pm</Day>
             <Day>Wednesday: 9am - 8pm</Day>
             <Day>Thursday: 9am - 8pm</Day>
             <Day>Friday: 9am - 8pm</Day>
