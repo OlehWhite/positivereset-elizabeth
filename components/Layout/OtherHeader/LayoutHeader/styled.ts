@@ -22,6 +22,8 @@ export const ContactInfo = styled(Box)(() => {
 
 export const Tel = styled("a")(() => {
   return {
+    display: "block",
+    textDecoration: "none",
     marginBottom: 6,
     color: "#979797",
     fontWeight: 600,
