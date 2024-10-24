@@ -22,9 +22,9 @@ import { Feedbacks } from "../components/Feedbacks/Feedbacks";
 import { PRIVATE_DATA } from "../otherPages/privateData";
 import { Iframe } from "../otherPages/career/style";
 import IMGHeader from "../public/NAPr4GWk.jpeg";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import axios from "axios";
+import { useGetProjects } from "../services/getInfo";
 
 interface IForm {
   Name: string;
@@ -34,9 +34,9 @@ interface IForm {
   Message: string;
 }
 
-const ID = "illinoisBehavioralCareTelEmailAddress";
-
 const AppointmentRequest = () => {
+  const { project } = useGetProjects();
+
   const {
     register,
     handleSubmit,
@@ -53,22 +53,6 @@ const AppointmentRequest = () => {
     },
   });
   const [state, stateSubmit] = useFormspree(`${PRIVATE_DATA.keyID}`);
-  const [googleMap, setGoogleMap] = useState<string>("");
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
-      )
-      .then((response) => {
-        setGoogleMap(
-          response.data.items[0].fields.googleMap.content[0].content[0].value
-        );
-      })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-      });
-  }, []);
 
   const onSubmit = async (data: any) => {
     await stateSubmit(data);
@@ -79,8 +63,7 @@ const AppointmentRequest = () => {
     <>
       <Head>
         <title>
-          Positive Reset Elizabeth - Call Today | Appointment
-          Request
+          Positive Reset Elizabeth - Call Today | Appointment Request
         </title>
         <meta
           name="keywords"
@@ -143,7 +126,7 @@ const AppointmentRequest = () => {
           </Box>
         </Wrapper>
         <Box sx={{ width: "100%", maxWidth: "1300px", margin: "0 auto 35px" }}>
-          <Iframe src={googleMap}></Iframe>
+          <Iframe src={project?.googleMaps} />
         </Box>
         <Feedbacks />
       </Box>

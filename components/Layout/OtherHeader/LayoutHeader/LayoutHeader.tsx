@@ -23,9 +23,11 @@ import IMGLocation from "../../../../public/icons8-location-50-dark.png";
 import Link from "next/link";
 import { Box, Modal } from "@mui/material";
 import { Iframe } from "../../../../otherPages/career/style";
-import { LINKS, OTHER_INFO } from "../../../../otherPages/utils";
+import { useGetProjects } from "../../../../services/getInfo";
 
 export const LayoutHeader: FC = () => {
+  const { project } = useGetProjects();
+
   const [openModalWindow, setOpenModalWindow] = useState<boolean>(false);
 
   const handleOpen = () => setOpenModalWindow(true);
@@ -46,9 +48,12 @@ export const LayoutHeader: FC = () => {
             />
           </WrapperImg>
           <ContactInfo>
-            <Tel href={`tel:${OTHER_INFO.tel}`}>{OTHER_INFO.tel}</Tel>
-            <Link id="link-email" href={OTHER_INFO.email_link}>
-              {OTHER_INFO.email}
+            <Tel href={`tel:${project?.tel}`}>{project?.tel}</Tel>
+            <Link
+              id="link-email"
+              href="https://positivereset.com/appointment-request"
+            >
+              {project?.email}
             </Link>
           </ContactInfo>
         </Contact>
@@ -56,8 +61,9 @@ export const LayoutHeader: FC = () => {
           <WrapperImg>
             <Image src={IMGLocation} width={45} alt="Phone" title="Phone" />
           </WrapperImg>
+
           <ContactInfo>
-            <Address onClick={handleOpen}>{OTHER_INFO.address}</Address>
+            <Address onClick={handleOpen}>{project?.address}</Address>
           </ContactInfo>
         </Contact>
         <Follow>
@@ -73,7 +79,7 @@ export const LayoutHeader: FC = () => {
           <FollowInfo>
             <Title>Follow Us</Title>
             <WrapperFollow>
-              <LinkA href={LINKS.facebook} target="_blank">
+              <LinkA href={project?.links[0].link} target="_blank">
                 <Image
                   src={IMGFacebook}
                   width={12}
@@ -82,7 +88,7 @@ export const LayoutHeader: FC = () => {
                   title="Facebook"
                 />
               </LinkA>
-              <LinkA href={LINKS.linkedin} target="_blank">
+              <LinkA href={project?.links[1].link} target="_blank">
                 <Image
                   src={IMGLinkedin}
                   width={12}
@@ -112,7 +118,7 @@ export const LayoutHeader: FC = () => {
               margin: "0 auto 35px",
             }}
           >
-            <Iframe src={OTHER_INFO.google_map}></Iframe>
+            <Iframe src={project?.googleMaps}></Iframe>
           </Box>
         </Modal>
       </ContactAndFollow>

@@ -25,9 +25,9 @@ export const Tel = styled("a")(() => {
     display: "block",
     textDecoration: "none",
     marginBottom: 6,
-    color: "#979797",
+    color: "#555",
     fontWeight: 600,
-    fontSize: 14,
+    fontSize: 13,
   };
 });
 

@@ -26,7 +26,7 @@ export const Title = styled("h2")(() => {
     display: "flex",
     justifyContent: "center",
     color: "#3498db",
-    margin: 0,
+    margin: "20px 0",
     fontSize: 26,
   };
 });

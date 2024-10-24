@@ -4,6 +4,7 @@ import Slider from "react-slick";
 export const HeaderContainer = styled("header")(() => {
   return {
     height: "80vh",
+    position: "relative",
   };
 });
 

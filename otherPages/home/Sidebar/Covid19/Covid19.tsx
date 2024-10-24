@@ -1,38 +1,14 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import IGMIllinois from "../../../../public/Illinois-BC-Name01e.png";
-import { Wrapper, Title, Text, Link } from "./styled";
+import { Wrapper, Title, Text, Link, Tel, Email, Address } from "./styled";
 import { Box } from "@mui/material";
-import axios from "axios";
-
+import IMGFacebook from "../../../../public/icons8-facebook-50.png";
+import IMGInstagram from "../../../../public/instagram.png";
 import Image from "next/image";
-import { PRIVATE_DATA } from "../../../privateData";
-import { LINKS } from "../../../utils";
-
-const ID = "telephoneNumber";
+import { useGetProjects } from "../../../../services/getInfo";
 
 export const Covid19: FC = () => {
-  const [linkFacebook, setLinkFaceBook] = useState<string>("");
-  const [linkInstagram, setLinkInstagram] = useState<string>("");
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`,
-      )
-      .then((response) => {
-        setLinkFaceBook(
-          response.data.items[0].fields.facebookLink.content[0].content[0]
-            .value,
-        );
-        setLinkInstagram(
-          response.data.items[0].fields.instagramLink.content[0].content[0]
-            .value,
-        );
-      })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-      });
-  }, []);
+  const { project } = useGetProjects();
 
   return (
     <>
@@ -76,22 +52,24 @@ export const Covid19: FC = () => {
             such as anxiety, depression, stress, or otherwise including those
             caused as a result of recent events. If you or someone you know
             resides in any area of the State of Illinois and is in need of our
-            services please reach out to our office at +1 (848) 228-3388 and get
+            services please reach out to our office at {project?.tel} and get
             access to the help you need.
           </Text>
+          <Tel>{project?.tel}</Tel>
           <Box sx={{ display: "flex" }}>
-            <Link href={linkFacebook} target="_blank">
+            <Link href={project?.links[0].link} target="_blank">
               <Image
-                src={LINKS.facebook}
+                src={IMGFacebook}
                 alt="Facebook"
                 title="Facebook"
                 width={22}
                 height={22}
               />
             </Link>
-            <Link href={linkInstagram} target="_blank">
+
+            <Link href={project?.links[3].link} target="_blank">
               <Image
-                src={LINKS.instagram}
+                src={IMGInstagram}
                 alt="Linkedin"
                 title="Linkedin"
                 width={22}

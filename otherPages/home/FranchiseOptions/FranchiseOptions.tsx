@@ -1,39 +1,10 @@
-import {
-  Container,
-  Title,
-  Text,
-  Label,
-  Wrapper,
-  Rating,
-  TextRating,
-} from "./styled";
+import { Container, Title, Text, Wrapper, Rating, TextRating } from "./styled";
 import { LinearProgressWithLabel } from "../../../components/LinearProgressWithLabel/LinearProgressWithLabel";
-import IGMLabel from "../../../public/signature-white-img.png";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Box } from "@mui/material";
-import axios from "axios";
-import Image from "next/image";
 import IMGLogo from "../../../public/gLLTpCpk.png";
-import { PRIVATE_DATA } from "../../privateData";
-
-const ID = "positiveresetHomeRating";
 
 export const FranchiseOptions: FC = () => {
-  const [rating, setRating] = useState<any>([]);
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
-      )
-      .then((response) => {
-        setRating(response.data.items);
-      })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-      });
-  }, []);
-
   return (
     <Container style={{ backgroundImage: `url(${IMGLogo.src})` }}>
       <Wrapper>
@@ -45,21 +16,20 @@ export const FranchiseOptions: FC = () => {
             improvements in the state of mental well-being.
           </Text>
         </Box>
-        <Box>
-          {rating.length > 0 &&
-            rating.map((rating: any, index: number) => (
-              <Rating key={index}>
-                <TextRating>
-                  {rating.fields.title.content[0].content[0].value}
-                </TextRating>
-                <LinearProgressWithLabel
-                  value={Number(
-                    rating.fields.number.content[0].content[0].value
-                  )}
-                />
-              </Rating>
-            ))}
-        </Box>
+
+        <Rating>
+          <TextRating>Child and Adolescent</TextRating>
+          <LinearProgressWithLabel value={67} />
+
+          <TextRating>Family Therapy</TextRating>
+          <LinearProgressWithLabel value={77} />
+
+          <TextRating>Stress Management</TextRating>
+          <LinearProgressWithLabel value={82} />
+
+          <TextRating>Individual Therapy</TextRating>
+          <LinearProgressWithLabel value={96} />
+        </Rating>
       </Wrapper>
     </Container>
   );

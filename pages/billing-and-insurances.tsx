@@ -14,34 +14,16 @@ import IMGTwo from "../public/Billing02.jpg";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { PRIVATE_DATA } from "../otherPages/privateData";
-
-const ID = "positiveresetTelEmailAddress";
+import { useGetProjects } from "../services/getInfo";
 
 const BillingAndInsurances = () => {
-  const [telNum, setTelNum] = useState<string>("");
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://cdn.contentful.com/spaces/${PRIVATE_DATA.spaseID}/entries?content_type=${ID}&access_token=${PRIVATE_DATA.accessId}`
-      )
-      .then((response) => {
-        setTelNum(response.data.items[0].fields.telephoneNumber);
-      })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-      });
-  }, []);
+  const { project } = useGetProjects();
 
   return (
     <>
       <Head>
         <title>
-          Positive Reset Elizabeth - Call Today | Billing and
-          Insurances
+          Positive Reset Elizabeth - Call Today | Billing and Insurances
         </title>
         <meta
           name="keywords"
@@ -90,8 +72,8 @@ const BillingAndInsurances = () => {
               </Text>
               <Text>
                 If you have questions about your bill, please contact our
-                billing department at {telNum}. For questions regarding your
-                insurance, please contact your insurance company directly.
+                billing department at {project?.tel}. For questions regarding
+                your insurance, please contact your insurance company directly.
               </Text>
               <Text>
                 Our Clinic does not discriminate on the basis of race, color,

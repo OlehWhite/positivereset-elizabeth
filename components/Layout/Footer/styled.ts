@@ -28,7 +28,7 @@ export const Wrapper = styled(Box)(() => {
 export const Logo = styled(Box)(() => {
   return {
     weight: "100%",
-    maxWidth: 315,
+    maxWidth: 300,
     margin: "0 24px 0",
   };
 });
@@ -232,13 +232,13 @@ export const Copyright = styled(Box)(() => {
 export const Links = styled(Box)(() => {
   return {
     display: "flex",
+    overflow: "hidden",
+    gap: "10px",
   };
 });
 
 export const Facebook = styled("a")(() => {
   return {
-    width: 14,
-    marginRight: 16,
     transition: ".3s",
 
     "&:hover": {
@@ -250,8 +250,7 @@ export const Facebook = styled("a")(() => {
 
 export const Twitter = styled("a")(() => {
   return {
-    width: 14,
-    marginRight: 16,
+    transition: ".3s",
 
     "&:hover": {
       filter: "brightness(0.5)",
@@ -262,7 +261,6 @@ export const Twitter = styled("a")(() => {
 
 export const Linkedin = styled("a")(() => {
   return {
-    width: 14,
     transition: ".3s",
 
     "&:hover": {

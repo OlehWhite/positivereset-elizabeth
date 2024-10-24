@@ -7,4 +7,5 @@ export const BASE_NAV = [
   { name: "OUR STAFF MEMBERS ", path: "/our-staff" },
   { name: "RATES", path: "/rates" },
   { name: "CAREER", path: "/career-opportunities" },
+  { name: "BLOGS", path: "/blogs" },
 ];

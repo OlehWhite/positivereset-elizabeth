@@ -64,6 +64,7 @@ export const Wrapper = styled(Box)(() => {
     maxWidth: 350,
     width: "100%",
     transition: ".3s",
+    cursor: "pointer",
   };
 });
 

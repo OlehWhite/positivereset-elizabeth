@@ -39,11 +39,10 @@ export const StyledFile = styled(Input)(() => {
 export const Title = styled("h2")(() => {
   return {
     display: "flex",
-    alignItems: "center",
-    fontSize: 24,
-    fontWeight: 700,
+    justifyContent: "center",
     color: "#3498db",
-    margin: 0,
+    fontSize: 26,
+    marginTop: 30,
   };
 });
 
