@@ -24,7 +24,7 @@ const LogoImgDark = () => {
               fontSize: 18,
             }}
           >
-            POSITIVE RESET
+            POSITIVE RESET ELIZABETH
           </Box>
           <Box
             sx={{
@@ -34,15 +34,6 @@ const LogoImgDark = () => {
             }}
           >
             Mental Health Clinic
-          </Box>
-          <Box
-            sx={{
-              color: "rgba(55,152,213,0.98)",
-              fontWeight: "bold",
-              fontSize: 14,
-            }}
-          >
-            ELIZABETH
           </Box>
         </Box>
       </Box>
