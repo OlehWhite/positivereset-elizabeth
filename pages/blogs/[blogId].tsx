@@ -38,7 +38,9 @@ const BlogId = ({ data }) => {
 
   useEffect(() => {
     if (data) {
-      const project = data[0]?.[CURRENT_WEBSITE.POSITIVE_RESET] as Website;
+      const project = data[0]?.[
+        CURRENT_WEBSITE.POSITIVE_RESET_ELIZABETH
+      ] as Website;
 
       const currentBlog = project?.blogs.find((blog) => blog.id === blogId);
 

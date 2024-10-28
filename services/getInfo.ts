@@ -28,7 +28,7 @@ export const useGetProjects = () => {
   }, []);
 
   const project: Website = projects
-    ? projects[0]?.[CURRENT_WEBSITE.POSITIVE_RESET]
+    ? projects[0]?.[CURRENT_WEBSITE.POSITIVE_RESET_ELIZABETH]
     : DEFAULT_WEBSITE;
 
   return { project, error };
