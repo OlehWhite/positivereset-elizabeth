@@ -24,6 +24,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import { RatesSurprise } from "../otherPages/rates/RatesSurprise/RatesSurprise";
 import { Feedbacks } from "../components/Feedbacks/Feedbacks";
+import { useGetProjects } from "../services/getInfo";
 
 const Rates = () => {
   const { project } = useGetProjects();
