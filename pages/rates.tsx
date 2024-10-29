@@ -26,12 +26,12 @@ import { RatesSurprise } from "../otherPages/rates/RatesSurprise/RatesSurprise";
 import { Feedbacks } from "../components/Feedbacks/Feedbacks";
 
 const Rates = () => {
+  const { project } = useGetProjects();
+
   return (
     <>
       <Head>
-        <title>
-          Positive Reset Elizabeth - Call Today | Rates
-        </title>
+        <title>Positive Reset Elizabeth - Call Today | Rates</title>
         <meta
           name="keywords"
           content="rates, pricing, fees, cost, payment, service charges, pricing structure, rate plans, pricing options, fee schedule, payment information, service costs, pricing details, affordable rates, competitive pricing, transparent pricing, budget-friendly rates, discounted rates, special offers"
@@ -139,7 +139,8 @@ const Rates = () => {
               <ul style={{ paddingLeft: 20 }}>
                 <li>Excuse letter for school – Free</li>
                 <li>
-                  Letter from the office – Please call the office: 732-955-4141
+                  Letter from the office – Please call the office:{" "}
+                  {project?.tel}
                 </li>
                 <li>Please call for Discounted Rates</li>
                 <li>Letter from the counselor – $80</li>
